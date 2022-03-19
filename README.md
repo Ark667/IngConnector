@@ -29,20 +29,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/Ark667/DynamoDb2MongoDb">
+  <!-- <a href="https://github.com/Ark667/IngConnector">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-<h3 align="center">DynamoDb2MongoDb</h3>
+<h3 align="center">IngConnector</h3>
 
   <p align="center">
-    Simple .Net5 application for transfering DynamoDb table data to MongoDb collection.
+    IngBank sandbox API usage demo with .Net6.
     <br />
-    <a href="https://github.com/Ark667/DynamoDb2MongoDb"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ark667/IngConnector"><strong>Explore the docs »</strong></a>
     <br />    
-    <a href="https://github.com/Ark667/DynamoDb2MongoDb/issues">Report Bug</a>
+    <a href="https://github.com/Ark667/IngConnector/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Ark667/DynamoDb2MongoDb/issues">Request Feature</a>
+    <a href="https://github.com/Ark667/IngConnector/issues">Request Feature</a>
   </p>
 </div>
 
@@ -59,12 +59,9 @@
       </ul>
     </li>
     <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
@@ -85,10 +82,7 @@ MongoDb also provide some desirable querying features not present on DynamoDb.
 
 ### Built With
 
-* [.Net5](https://dotnet.microsoft.com/download/dotnet/5.0)
-* [AWSSDK.DynamoDBv2](https://github.com/aws/aws-sdk-net/)
-* [MongoDb.Driver](https://docs.mongodb.com/drivers/csharp/)
-* [CommandLineParser](https://github.com/commandlineparser/commandline)
+* [.Net6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -97,70 +91,27 @@ MongoDb also provide some desirable querying features not present on DynamoDb.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You can execute current release with Docker.
-
-```sh
-docker run --rm --network=host ghcr.io/ark667/dynamodb2mongodb:master copy 
-    --dynamoaccesskey *** 
-    --dynamosecretaccesskey *** 
-    --dynamoregion [region] 
-    --mongoconnectionstring "mongodb://[host]:[port]/[database]" 
-    --dynamotable [tablename]
-```
-
-You can also clone the repo and build it yourself.
+Clone the repo, build and run.
 
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/Ark667/DynamoDb2MongoDb.git
+   git clone https://github.com/Ark667/IngConnector.git
    ```
 
 2. Build application
 
    ```sh
-   dotnet build DynamoDb2MongoDb.sln
+   dotnet build IngConnector.sln
    ```
 
-3. Execute help option
+3. Execute application
 
    ```sh
-   .\DynamoDb2MongoDb.exe --help
+   .\IngConnector.exe
    ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Basic usage is pretty straightforrward. Just call copy verb with required keys and parameters.
-
-```sh
-.\DynamoDb2MongoDb.exe copy
-    --dynamoaccesskey *** 
-    --dynamosecretaccesskey *** 
-    --dynamoregion [region] 
-    --mongoconnectionstring "mongodb://[host]:[port]/[database]" 
-    --dynamotable [tablename]
-```
-
-Can also be executed from Docker container.
-
-```sh
-docker build -f ".\DynamoDb2MongoDb\Dockerfile" .
-```
-
-```sh
-docker run --rm --network=host dynamodb2mongodb copy 
-    --dynamoaccesskey *** 
-    --dynamosecretaccesskey *** 
-    --dynamoregion [region] 
-    --mongoconnectionstring "mongodb://[host]:[port]/[database]" 
-    --dynamotable [tablename]
-```
-
-
+Sandbox data will be returned with balance and transactions information. Also all the http requests and responses will be displayed.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,7 +148,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Aingeru Medrano - [@AingeruBlack](https://twitter.com/AingeruBlack) <!-- - email@email_client.com -->
 
-Project Link: [https://github.com/Ark667/DynamoDb2MongoDb](https://github.com/Ark667/DynamoDb2MongoDb)
+Project Link: [https://github.com/Ark667/IngConnector](https://github.com/Ark667/IngConnector)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -217,16 +168,16 @@ Project Link: [https://github.com/Ark667/DynamoDb2MongoDb](https://github.com/Ar
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Ark667/DynamoDb2MongoDb.svg?style=for-the-badge
-[contributors-url]: https://github.com/Ark667/DynamoDb2MongoDb/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Ark667/DynamoDb2MongoDb.svg?style=for-the-badge
-[forks-url]: https://github.com/Ark667/DynamoDb2MongoDb/network/members
-[stars-shield]: https://img.shields.io/github/stars/Ark667/DynamoDb2MongoDb.svg?style=for-the-badge
-[stars-url]: https://github.com/Ark667/DynamoDb2MongoDb/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Ark667/DynamoDb2MongoDb.svg?style=for-the-badge
-[issues-url]: https://github.com/Ark667/DynamoDb2MongoDb/issues
-[license-shield]: https://img.shields.io/github/license/Ark667/DynamoDb2MongoDb.svg?style=for-the-badge
-[license-url]: https://github.com/Ark667/DynamoDb2MongoDb/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Ark667/IngConnector.svg?style=for-the-badge
+[contributors-url]: https://github.com/Ark667/IngConnector/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Ark667/IngConnector.svg?style=for-the-badge
+[forks-url]: https://github.com/Ark667/IngConnector/network/members
+[stars-shield]: https://img.shields.io/github/stars/Ark667/IngConnector.svg?style=for-the-badge
+[stars-url]: https://github.com/Ark667/IngConnector/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Ark667/IngConnector.svg?style=for-the-badge
+[issues-url]: https://github.com/Ark667/IngConnector/issues
+[license-shield]: https://img.shields.io/github/license/Ark667/IngConnector.svg?style=for-the-badge
+[license-url]: https://github.com/Ark667/IngConnector/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/aingeru/
 [product-screenshot]: images/screenshot.png
