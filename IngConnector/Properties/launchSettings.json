@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IngConnector": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
