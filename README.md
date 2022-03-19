@@ -72,9 +72,9 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project was intended to make a fast data transfer from a bunch of DynamoDb tables to MongoDb collections. 
-Provisioned DynamoDb tables became too expensive and decided to migrate to managed MongoDb service on K8s cluster.
-MongoDb also provide some desirable querying features not present on DynamoDb.
+This project was an intent to manage ING bank account for a private application. The API usage was quite painfull over security and certificates management, but successfull. The final problem was that ING developer documentation specifies that official and specific certificates for payment companies are needed to use the API in prodcution environments, and are dificult and/or very expensive to get.
+
+If any one has some information about this, please let me know!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -137,7 +137,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Feel free to use the code in this repository as it is under MIT license. See `LICENSE.txt` for more information. You can also buy me a coffee for my little effort.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I2I16OYC5)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
