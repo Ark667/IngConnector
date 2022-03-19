@@ -2,6 +2,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
+namespace IngConnector.Helpers;
+
 public static class HttpClientExtensions
 {
     public static async Task<string> ToRawString(this HttpRequestMessage request)
