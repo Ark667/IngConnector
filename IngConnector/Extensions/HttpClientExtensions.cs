@@ -2,7 +2,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IngConnector.Helpers;
+namespace IngConnector.Extensions;
 
 public static class HttpClientExtensions
 {
@@ -14,20 +14,20 @@ public static class HttpClientExtensions
         sb.AppendLine(line1);
 
         foreach (var (key, value) in request.Headers)
-        foreach (var val in value)
-        {
-            var header = $"{key}: {val}";
-            sb.AppendLine(header);
-        }
-
-        if (request.Content?.Headers != null)
-        {
-            foreach (var (key, value) in request.Content.Headers)
             foreach (var val in value)
             {
                 var header = $"{key}: {val}";
                 sb.AppendLine(header);
             }
+
+        if (request.Content?.Headers != null)
+        {
+            foreach (var (key, value) in request.Content.Headers)
+                foreach (var val in value)
+                {
+                    var header = $"{key}: {val}";
+                    sb.AppendLine(header);
+                }
         }
         sb.AppendLine();
 
@@ -42,23 +42,23 @@ public static class HttpClientExtensions
     {
         var sb = new StringBuilder();
 
-        var statusCode = (int) response.StatusCode;
+        var statusCode = (int)response.StatusCode;
         var line1 = $"HTTP/{response.Version} {statusCode} {response.ReasonPhrase}";
         sb.AppendLine(line1);
 
         foreach (var (key, value) in response.Headers)
-        foreach (var val in value)
-        {
-            var header = $"{key}: {val}";
-            sb.AppendLine(header);
-        }
+            foreach (var val in value)
+            {
+                var header = $"{key}: {val}";
+                sb.AppendLine(header);
+            }
 
         foreach (var (key, value) in response.Content.Headers)
-        foreach (var val in value)
-        {
-            var header = $"{key}: {val}";
-            sb.AppendLine(header);
-        }
+            foreach (var val in value)
+            {
+                var header = $"{key}: {val}";
+                sb.AppendLine(header);
+            }
         sb.AppendLine();
 
         var body = await response.Content.ReadAsStringAsync();

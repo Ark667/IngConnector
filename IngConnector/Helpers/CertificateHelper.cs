@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IngConnector.Helpers;
 
-public enum PemStringType
-{
-    RsaPrivateKey,
-    Certificate
-}
-
-public class CertificateHelper
+public static class CertificateHelper
 {
     public static byte[] GetSHA256(byte[] phrase)
     {
@@ -22,7 +12,8 @@ public class CertificateHelper
 
     public static byte[] GetBytesFromPEM(string pemString, PemStringType type)
     {
-        string header; string footer;
+        string header;
+        string footer;
         switch (type)
         {
             case PemStringType.Certificate:

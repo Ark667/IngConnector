@@ -1,17 +1,19 @@
-﻿
-using IngConnector;
+﻿using IngConnector.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 
-var logger = LoggerFactory.
-    Create(builder => { builder.AddConsole(); }).
-    CreateLogger<IngService>();
-var configuration = new ConfigurationBuilder().
-    AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).
-    AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true).
-    AddCommandLine(args).
-    Build();
+var logger = LoggerFactory
+    .Create(builder =>
+    {
+        builder.AddConsole();
+    })
+    .CreateLogger<IngService>();
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true)
+    .AddCommandLine(args)
+    .Build();
 
 //// TODO download certificates
 //https://developer.ing.com/openbanking/assets/data/psd2/example_client_signing.cer
@@ -20,7 +22,7 @@ var configuration = new ConfigurationBuilder().
 //https://developer.ing.com/openbanking/assets/data/psd2/example_client_tls.key
 
 // Get service instance
-IIngService service = new IngService(configuration, logger);
+var service = new IngService(configuration, logger);
 
 // Get token from service
 var accessToken = service.GetAccessToken();
